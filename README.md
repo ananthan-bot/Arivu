@@ -85,10 +85,10 @@ API docs available at http://localhost:8000/docs once running.
 ## Roadmap
 
 - [x] Document ingestion pipeline (extraction -> chunking -> embedding -> storage)
-- [ ] Hybrid retrieval (vector + BM25 via reciprocal rank fusion)
-- [ ] Cross-encoder reranking
-- [ ] LLM answer generation with citations
-- [ ] Hallucination guard (low-confidence retrieval -> decline to answer)
+- [x] Hybrid retrieval (vector + BM25 via reciprocal rank fusion)
+- [x] Cross-encoder reranking
+- [x] LLM answer generation with citations
+- [x] Hallucination guard (low-confidence retrieval -> decline to answer)
 - [ ] Retrieval evaluation pipeline (precision/recall on a fixed test set)
 - [ ] Frontend chat interface
 - [ ] Deployment (Render/Railway + Vercel)
