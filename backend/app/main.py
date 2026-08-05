@@ -8,6 +8,7 @@ from sqlalchemy import text
 from app.core.config import get_settings
 from app.core.database import Base, engine
 from app.modules.ingestion.controllers.document_controller import router as documents_router
+from app.modules.retrieval.controllers.query_controller import router as query_router
 # Importing the models module registers Document/Chunk on Base.metadata --
 # required before create_all(), even though nothing else references it here.
 from app.modules.ingestion.models import document  # noqa: F401
@@ -27,6 +28,7 @@ app.add_middleware(
 )
 
 app.include_router(documents_router)
+app.include_router(query_router)
 
 
 @app.on_event("startup")
