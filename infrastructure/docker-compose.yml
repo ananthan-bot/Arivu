@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   postgres:
     image: ankane/pgvector:v0.5.1
@@ -9,7 +7,7 @@ services:
       POSTGRES_PASSWORD: arivu
       POSTGRES_DB: arivu
     ports:
-      - "5432:5432"
+      - "55432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
