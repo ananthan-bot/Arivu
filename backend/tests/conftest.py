@@ -23,7 +23,15 @@ if "sentence_transformers" not in sys.modules:
                 return np.random.rand(len(texts), 384)
             return np.random.rand(384)
 
+    class _FakeCrossEncoder:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def predict(self, pairs):
+            return [0.5] * len(pairs)
+
     st_stub.SentenceTransformer = _FakeSentenceTransformer
+    st_stub.CrossEncoder = _FakeCrossEncoder
     sys.modules["sentence_transformers"] = st_stub
 
 if "anthropic" not in sys.modules:
